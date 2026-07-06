@@ -2,7 +2,7 @@
 It has happened to me numerous of times that I dualboot, but then decide to reinstall some distro on my linux drive, but oh no, windows has hijacked my linux boot partition. So when I wipe my linux drive, I cannot boot into windows anymore. This is a guide that aims to teach me/you how to resolve that once it inevitably happens.
 ## 0.1. What I exactly did to get myself in this situation for writing this guide
 I installed windows 11 inside a VM on virtualbox (currently using windows, if I was on linux wouldve used qemu/kvm), then inserted a fedora iso into the vm and booted into that, then deleted the windows boot partition to emulate this scenario roughly.
-<img width="1020" height="758" alt="image" src="https://github.com/user-attachments/assets/6db70860-2941-4d7f-a728-f6f0fd88aab5" />
+<img width="510" height="379" alt="image" src="https://github.com/user-attachments/assets/6db70860-2941-4d7f-a728-f6f0fd88aab5" />
 
 ## 0.5. Backup your data from windows
 If you're aware something like this is probably about to go down, please back up all the important data on your windows drive just in case.
