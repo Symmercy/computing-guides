@@ -30,12 +30,11 @@ To do that we'll use ```select partition <insert partition number>``` *(it is sm
 Then we'll use ```shrink desired=<amount you want to shrink>```\
 <img width="406" height="78" alt="image" src="https://github.com/user-attachments/assets/f4c8e4e1-30d9-408b-957b-35de9096e309" />\
 ## Creating the new EFI boot partition
-Then we have to ```select disk <the disk you're using for this>``` and then ```create partition efi size=<the size you want it to be (I recommend 512)>```.\
+Then we have to ```select disk <the disk you're using for this>``` and then ```create partition efi size=<the size you want it to be (I recommend 512)>```\
 <img width="453" height="83" alt="image" src="https://github.com/user-attachments/assets/cc99a6aa-5673-46fb-8da7-dc2e51c95fc4" />\
-
-Now we select the newly created partition and format it with ```select partition <number of the new boot partition>``` (if you dont know what the number is run ```list partitions```)\ 
-<img width="417" height="225" alt="image" src="https://github.com/user-attachments/assets/5a0509ea-5540-4d1e-b2df-752a332c7ff1" />\
-and then once selected ```format quick fs=fat32```\
+Now we select the newly created partition and format it with ```select partition <number of the new boot partition>``` (if you dont know what the number is run ```list partitions```)   
+<img width="417" height="225" alt="image" src="https://github.com/user-attachments/assets/5a0509ea-5540-4d1e-b2df-752a332c7ff1" />  
+and then once selected ```format quick fs=fat32```  
 <img width="356" height="103" alt="image" src="https://github.com/user-attachments/assets/427e277c-f0ba-4c1e-ada3-b471e6169299" />\
 
 
