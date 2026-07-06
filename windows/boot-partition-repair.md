@@ -1,5 +1,7 @@
 # Windows boot partition repair
 It has happened to me numerous of times that I dualboot, but then decide to reinstall some distro on my linux drive, but oh no, windows has hijacked my linux boot partition. So when I wipe my linux drive, I cannot boot into windows anymore. This is a guide that aims to teach me/you how to resolve that once it inevitably happens.
+## 0.5. Backup your data from windows
+If you're aware something like this is probably about to go down, please back up all the important data on your windows drive just in case.
 ## 1. Flash windows onto a usb stick
 If you're on windows you use either the official [microsoft utility](https://www.microsoft.com/en-gb/software-download/windows11) *labeled Create Windows 11 Installation Media* or you can use my preffered method which is ofcourse [rufus](https://rufus.ie/en/). If you're on linux I would suggest you to just use ventoy for this since I have found balena etcher doesn't work. Whatever you do (*except the official way*) you need the windows iso which you can get [here](https://www.microsoft.com/en-gb/software-download/windows11)
 ## 2. Boot into your installation (recovery) media
