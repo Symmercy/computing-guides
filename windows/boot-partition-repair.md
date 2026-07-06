@@ -5,7 +5,7 @@ If you're aware something like this is probably about to go down, please back up
 ## 1. Flash windows onto a usb stick
 If you're on windows you use either the official [microsoft utility](https://www.microsoft.com/en-gb/software-download/windows11) *labeled Create Windows 11 Installation Media* or you can use my preffered method which is ofcourse [rufus](https://rufus.ie/en/). If you're on linux I would suggest you to just use ventoy for this since I have found balena etcher doesn't work. Whatever you do (*except the official way*) you need the windows iso which you can get [here](https://www.microsoft.com/en-gb/software-download/windows11)
 ## 2. Boot into your installation (recovery) media
-Plug in your usb stick with a freshly flashed windows installation media into your computer, keep in mind we are not reinstalling windows so the procedure is not exactly the same. Hit the key you usually need to hit to boot into a usb drive, *considering you're reading this chances are you have done this a lot of times* and select your usb stick.
+Plug in your usb stick with a freshly flashed windows installation media into your computer, keep in mind we are not reinstalling windows so the procedure is not exactly the same. Hit the key you usually need to hit to boot into a usb drive, and select your usb stick.
 ## 3. Open terminal, do the operation.
 Once you're in the installation media, you're not going to proceed to actually install windows, you're going to hit ```shift+f10``` and a cmd window is going to open.
 In the terminal you're going to type ```diskpart``` then you are going to list all the drives using ```list disk```
