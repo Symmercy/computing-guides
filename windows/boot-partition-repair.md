@@ -1,4 +1,4 @@
-# Windows boot partition repair (GPT partitions)
+# Windows boot partition repair (GPT partitions) UEFI
 It has happened to me numerous of times that I dualboot, but then decide to reinstall some distro on my linux drive, but oh no, windows has hijacked my linux boot partition. So when I wipe my linux drive, I cannot boot into windows anymore. This is a guide that aims to teach me/you how to resolve that once it inevitably happens.
 ## 0.1. What I exactly did to get myself in this situation for writing this guide
 I installed windows 11 inside a VM on virtualbox (currently using windows, if I was on linux wouldve used qemu/kvm), then inserted a fedora iso into the vm and booted into that, then deleted the windows boot partition to emulate this scenario roughly.
@@ -22,20 +22,37 @@ Here you are choosing what drive you want your new boot partition to be on, *it 
 
 Now we want to see all the partitions you have on the drive you're selected, we'll do that with ```list partitions```\
 <img width="419" height="124" alt="image" src="https://github.com/user-attachments/assets/f610d9b6-b549-4160-94ef-31871cfe5834" />
-## Shrink drive (not needed if you have unallocated space for a new partition)
+## 4. Shrink drive (not needed if you have unallocated space for a new partition)
 Now, if you have enough free(unallocated) space on the drive you have selected (500mb is more than enough), you can go on to the next step, if you do not have enough space you have to shrink some partitions.
 To do that we'll use ```select partition <insert partition number>``` *(it is smartest to shrink a primary drive, so in this case the system drive)*\
 <img width="343" height="80" alt="image" src="https://github.com/user-attachments/assets/fe6096d8-875c-4c01-be1a-98b15f8d43fd" />
 
 Then we'll use ```shrink desired=<amount you want to shrink>```\
 <img width="406" height="78" alt="image" src="https://github.com/user-attachments/assets/f4c8e4e1-30d9-408b-957b-35de9096e309" />
-## Creating the new EFI boot partition
+## 5. Creating the new EFI boot partition
 Then we have to ```select disk <the disk you're using for this>``` and then ```create partition efi size=<the size you want it to be (I recommend 512)>```\
 <img width="453" height="83" alt="image" src="https://github.com/user-attachments/assets/cc99a6aa-5673-46fb-8da7-dc2e51c95fc4" />
 Now we select the newly created partition and format it with ```select partition <number of the new boot partition>``` (if you dont know what the number is run ```list partitions```)   
 <img width="417" height="225" alt="image" src="https://github.com/user-attachments/assets/5a0509ea-5540-4d1e-b2df-752a332c7ff1" />  
 and then once selected ```format quick fs=fat32```  
 <img width="356" height="103" alt="image" src="https://github.com/user-attachments/assets/427e277c-f0ba-4c1e-ada3-b471e6169299" />
+##6. Making the partition functional
+Ok, now we actually make the boot partition functional.\
+### Step 1
+We're gonna run ```list volume``` to list the volumes on our drive (this basically lets us manipulate drive letters which we need)
+## Step 1.5
+Select your new boot partition with ```select volume <number-of-boot-partition>``` and assign it a drive letter with ```assign letter=<unused-drive-letter-uppercase-no-colon>```
+<img width="630" height="258" alt="image" src="https://github.com/user-attachments/assets/9f05797e-7a2a-44f9-9066-6e9c5cb1256e" />
+### Step 2 (potentially not needed)
+If your main system drive (what is usually C:) doesn't currently have a drive letter we need to assign it
+To do that select the system drive with ```select volume <number-of-your-system-drive>``` once selected we run ```assign letter=<unused drive letter (uppercase without colon)>```\
+<img width="503" height="147" alt="image" src="https://github.com/user-attachments/assets/3bfeebca-4c31-4cba-90f4-172afe5eb58c" />
+### Step 3 
+To actually finally make your boot partition functional run exit diskpart with ```exit``` and then run ```bcdboot <system-partition-letter-uppercase-with-colon>:\Windows /s <boot-partition-letter-uppercase-with-colon> /f UEFI```
+<img width="349" height="73" alt="image" src="https://github.com/user-attachments/assets/fed59cf3-6f17-46d2-be65-23a6a018bcd6" />
+If everything went according to plan you should be good to go. Reboot and if nothing happens go to your bootmenu and select the newly created windows boot partition
+
+
 
 
 
