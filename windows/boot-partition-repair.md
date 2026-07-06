@@ -228,3 +228,7 @@ bcdboot <system-partition-letter-uppercase-with-colon>:\Windows /s <boot-partiti
 ## Done
 
 If everything went according to plan you should be good to go. Reboot and if nothing happens go to your bootmenu and select the newly created windows boot partition.
+
+## Credits
+- https://www.reddit.com/r/buildapc/comments/uk0ymt/rebuild_windows_boot_partition_on_drive_with/
+This was practically entirely based on this guide, just filled in some blanks and made it a bit more cohesive, but thanks to the guy on reddit who documented his experience
