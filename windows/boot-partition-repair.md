@@ -6,3 +6,4 @@ If you're on windows you use either the official [microsoft utility](https://www
 Plug in your usb stick with a freshly flashed windows installation media into your computer, keep in mind we are not reinstalling windows so the procedure is not exactly the same. Hit the key you usually need to hit to boot into a usb drive, *considering you're reading this chances are you have done this a lot of times* and select your usb stick.
 ## 3. Open terminal, do the operation.
 Once you're in the installation media, you're not going to proceed to actually install windows, you're going to hit ```shift+f10``` and a cmd window is going to open.
+In the terminal you're going to type ```diskpart``` *diskpart is the windows equivalent to something like fdisk, don't worry, it is not hard to use*, then you are going to list all the drives using ```list disk```
