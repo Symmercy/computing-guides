@@ -4,7 +4,7 @@ It has happened to me numerous of times that I dualboot, but then decide to rein
 I installed windows 11 inside a VM on virtualbox (currently using windows, if I was on linux wouldve used qemu/kvm), then inserted a fedora iso into the vm and booted into that, then deleted the windows boot partition to emulate this scenario roughly.
 <img width="510" height="379" alt="image" src="https://github.com/user-attachments/assets/6db70860-2941-4d7f-a728-f6f0fd88aab5" />
 ## 0.5. Backup your data from windows
-If you're aware something like this is probably about to go down, please back up all the important data on your windows drive just in case.
+If you're aware something like this is probably about to go down, please back up all the important data on your windows drive just in case. __Make sure to back up all important data, when doing this you're messing around with drives, one wrong command and the wrong partition is wiped__
 ## 1. Flash windows onto a usb stick
 If you're on windows you use either the official [microsoft utility](https://www.microsoft.com/en-gb/software-download/windows11) *labeled Create Windows 11 Installation Media* or you can use my preffered method which is ofcourse [rufus](https://rufus.ie/en/). If you're on linux I would suggest you to just use ventoy for this since I have found balena etcher doesn't work. Whatever you do (*except the official way*) you need the windows iso which you can get [here](https://www.microsoft.com/en-gb/software-download/windows11)
 ## 2. Boot into your installation (recovery) media
@@ -33,7 +33,13 @@ Then we'll use ```shrink desired=<amount you want to shrink>```
 Then we have to ```select disk <the disk you're using for this>``` and then ```create partition efi size=<the size you want it to be (I recommend 512)>```. 
 <img width="453" height="83" alt="image" src="https://github.com/user-attachments/assets/cc99a6aa-5673-46fb-8da7-dc2e51c95fc4" />
 
-Now we select the newly created partition and format it with ```select partition <the new boot partition>``` and then ```format quick fs=fat32```
+Now we select the newly created partition and format it with ```select partition <number of the new boot partition>``` (if you dont know what the number is run ```list partitions```) 
+<img width="417" height="225" alt="image" src="https://github.com/user-attachments/assets/5a0509ea-5540-4d1e-b2df-752a332c7ff1" />
+and then once selected ```format quick fs=fat32```
+<img width="356" height="103" alt="image" src="https://github.com/user-attachments/assets/427e277c-f0ba-4c1e-ada3-b471e6169299" />
+
+
+
 
 
 
