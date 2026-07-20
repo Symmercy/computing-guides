@@ -3,6 +3,6 @@
 - [ublock origin](https://ublockorigin.com/)
 - [ublock-hide-yt-shorts](https://github.com/gijsdev/ublock-hide-yt-shorts)
 - [tampermonkey](https://www.tampermonkey.net/)
-- [Simple-YouTube-Age-Restriction-Bypass](https://github.com/zerodytrash/Simple-YouTube-Age-Restriction-Bypass)
+- [Simple-YouTube-Age-Restriction-Bypass](https://github.com/zerodytrash/Simple-YouTube-Age-Restriction-Bypass) (unfortunately doesnt work for me)
 - [SponsorBlock](https://sponsor.ajay.app/)
 - [Return Youtube Dislike](https://returnyoutubedislike.com/)
